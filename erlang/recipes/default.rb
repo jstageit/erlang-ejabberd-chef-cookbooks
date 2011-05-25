@@ -17,7 +17,7 @@ script "build Erlang/OTP" do
   interpreter "bash"
   cwd "/tmp/otp_src_R14B02"
   code <<-SH
-  ./configure --enable-threads --enable-smp-support --enable-kernel-poll --enable-hipe --enable-sctp \
+  ./configure --enable-threads --enable-smp-support --enable-hipe --enable-sctp \
               #{"--with-ssl=/usr/lib/ssl/" unless `uname`.strip == 'Darwin'}
   make install
   SH
